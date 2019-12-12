@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # ==================================================
 #
 #   Lection 11.
@@ -6,22 +8,39 @@
 #   asymptotics: O(N*M)
 #
 # ==================================================
-
-""" """
 """ 
-    
+поиск возрастающих подпоследовательностей в каждой части (от 0 до i) исходной числовой последовательности,
+фиксирование длин этих подпоследовательностей в списке и выбор максимального элемента из этого списка (выбор наибольшей длины)
 """
-def lis(A):
-    F = [0] * (len(A) + 1)
+def lenLis(A):
+    subSeqLens = [0] * len(A)
+    for i in range(len(A)):
+        for j in range(i):
+            if A[j] < A[i] and subSeqLens[j] > subSeqLens[i]:
+                subSeqLens[i] = subSeqLens[j]
+        subSeqLens[i] += 1
+    lis = findLis(subSeqLens, A)
+    return max(subSeqLens), lis
 
-    for i in range(1, len(A) + 1):
-        m = 0
-        for j in range(0, i):
-            if A[i] > A[j] and F[j] > 0:
-                m = F[j]
-            F[i] = m + 1
-    return F[len(A)]
+""" 
+восстановление НВП путем прохода списка длин от максимальной длины к минимальной, выяснения индекса элемента,
+соответствующего текущей длине подпоследовательности и присвоение значения элемента с таким же индексом в исходной последовательности
+элементам списка НВП - от конца к началу.
+"""
 
-A = [1, 4, 2, 3, 6, 5, 8, 9, 10]
+def findLis(L, A):
+    lis = [0] * max(L)
+    index = -1
+    localMax = L.index(max(L)) + 1
 
-print(lis(A))
+    for i in range(0, max(L)):
+        for j in range(localMax + 1):
+            if L[j] == max(L) - i:
+                index = j
+        lis[max(L) - i - 1] = A[index]
+        localMax = index
+    return lis
+
+A = [3, 9, 1, 2, 4, 7, 5, 4, 8, 9, 5, 6, 5]
+
+print(*lenLis(A), sep='\n')
