@@ -23,4 +23,4 @@ def fibDinamic(n):
         fibo[i] = fibo[i-1] + fibo[i-2]
     return fibo[n]
 
-print(fibDinamic(100000))
+print(fibDinamic(100))
