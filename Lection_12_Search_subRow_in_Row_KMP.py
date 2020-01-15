@@ -1,12 +1,16 @@
 # ==================================================
 #
 #   Lection 12.
-#   Поиск значений префикс-функции для строки.
+#   Алгоритм Кнутта-Морриса-Пратта.
+#   Поиск индекса символа в строке, который является первым
+#   в последовательности символов, совпадающей с искомой подстрокой.
 #
 #   asymptotics: O(N)
 #
 # ==================================================
-
+'''
+Основная часть. Осуществляет поиск префикс-функции. 
+'''
 def searchPrefix(S):
     pi = [0] * len(S)
     for i in range(1, len(S)):
@@ -29,13 +33,13 @@ def searchInString(sub:str, S:str):
 
     for i in range(0, len(prefixList)):
         if len(sub) == prefixList[i]:
-            income.append(i - len(sub) - len(div) - 1)
+            income.append(i - len(sub) * 2 - len(div) + 1)
     
     return income
 
 sub = "guru"
 string = "kjhgurulkjlkjgurugurugurulkjlkjggguruuuuulkjlkjgur"
 sub1 = "jjjj"
-string1 = "nnjjjjnnnjjjj"
+string1 = "nnnjjjjnnnjjjjj"
 
 print(searchInString(sub1, string1))
