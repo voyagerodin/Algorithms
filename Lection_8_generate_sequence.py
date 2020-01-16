@@ -1,3 +1,4 @@
+
 def generate_seq(N, prefix=[]):
     if len(prefix) == N:
         print(*prefix)
