@@ -39,22 +39,23 @@ def isBracesSequenceCorrect(S:str):
           if brace in "([":
                A_stack.push(brace)
           else:
-               assert brace in ")]", "Катастрофа!!! ожидалась закрывающаяся скобка: " + str(brace)
+               assert brace in ")]", "Все верно! Как и ожидалось - пришла закрывающаяся скобка: " + str(brace)
 
                if A_stack.is_empty():
                     return False
                left = A_stack.pop()
-               assert left in "([", "Ожидалась открывающая скобка: " + str(brace)
+
                if left == "(":
                     right = ")"
                elif left == "[":
                     right = "]"
+               
                if right != brace:
                     return False
-     
-     return A_stack.is_empty()
+          isStackEmpty = A_stack.is_empty()
+     return b
 
-S = "("
+S = "asdfasdf(llkjlkj[dddddf]sdfsdf(sdfsf)]fsdf)])"
 
 print(isBracesSequenceCorrect(S))
 
