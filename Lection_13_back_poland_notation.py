@@ -28,7 +28,7 @@ def backPolandNotation(notation:list):
                
      return A_stack.pop()
 
-notation = ['2', '7', "+"]
+notation = ['2', '7', "+", 5, "*"]
 
 print(backPolandNotation(notation))
 
