@@ -53,11 +53,12 @@ def isBracesSequenceCorrect(S:str):
                if right != brace:
                     return False
           isStackEmpty = A_stack.is_empty()
-     return b
+     return isStackEmpty
 
-S = "asdfasdf(llkjlkj[dddddf]sdfsdf(sdfsf)]fsdf)])"
+S1 = "asdfasdf(llkjlkj[dddddf]sdfsdf(sdfsf)]fsdf)])"
+S2 = "[]([])"
 
-print(isBracesSequenceCorrect(S))
+print(isBracesSequenceCorrect(S2))
 
 # if __name__ == "__main__":
 #     import doctest
