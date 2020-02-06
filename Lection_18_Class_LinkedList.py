@@ -18,9 +18,14 @@ class LinkedList:
           return x
 
 a = LinkedList()
-a.insert(5)
-a.insert(10)
-print(a.pop())
+
+for i in range(1, 100, 1):
+     a.insert(i)
+
 print(a.pop())
 
+N = 10000
+A = [0] * N
+A.insert(0, 1)
+print(A)
 
