@@ -20,6 +20,10 @@ class HeapStructure:
         self.size += 1
         self.siftUp(self.size-1)
 
+    def delete(self, n):
+        self.values[n], self.values[self.size -
+                                    1] = self.values[self.size-1], self.values[n]
+
     def siftUp(self, i):
         while i != 0 and self.values[i] < self.values[(i-1) // 2]:
             self.values[i], self.values[(
@@ -37,3 +41,15 @@ class HeapStructure:
 
     def get(self):
         return self.values
+
+
+listIn0 = [15, 8, 11, 3, 0, 9]
+listIn1 = [6, 3, 4, 1, 2, 5]
+listIn3 = [66, 1, 7, 1, 10, 22, 6, 29, 83, 2]
+
+heap = HeapStructure()
+
+heap.insertList(listIn1)
+heap.show()
+heap.delete(0)
+heap.show()

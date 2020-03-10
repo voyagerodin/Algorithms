@@ -8,6 +8,7 @@ from modules.heapStructure import HeapStructure as HS
 import generate.generatePermutations as GP
 
 listIn0 = [15, 8, 11, 3, 0, 9]
+listIn1 = [6, 3, 4, 1, 2, 5]
 listIn3 = [66, 1, 7, 1, 10, 22, 6, 29, 83, 2]
 
 listIndexPermutations = []
@@ -28,5 +29,5 @@ listHeapPermutation = []
 # for item in listHeapPermutation:
 #     print(item)
 
-heap.insertList(listIn3)
+heap.insertList(listIn1)
 heap.show()
