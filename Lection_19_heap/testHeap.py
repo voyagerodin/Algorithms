@@ -13,6 +13,7 @@ class myTestMerge(unittest.TestCase):
         heap.insertList(listIn)
         listResult = heap.get()
         self.assertEqual(listResult, listEtalon)
+# comment - 3
 
     def test_checkSortListToHeap10elements(self):
         listIn, listEtalon = FX.fixtureMakeSortedHeap10elements()
