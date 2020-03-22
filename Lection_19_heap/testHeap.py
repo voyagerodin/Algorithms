@@ -13,7 +13,7 @@ class myTestMerge(unittest.TestCase):
         heap.insertList(listIn)
         listResult = heap.get()
         self.assertEqual(listResult, listEtalon)
-# comment - 3
+# comment - 3 = Andrew
 # comment - 4 = 2
 
     def test_checkSortListToHeap10elements(self):
