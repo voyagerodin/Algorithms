@@ -1,3 +1,2 @@
 # 1 alg master
-# 2 alg-VO master
-# 3 alg2
+# 2 alg2
